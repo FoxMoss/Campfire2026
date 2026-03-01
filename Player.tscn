@@ -12,6 +12,14 @@ script = ExtResource("1_xhfnw")
 SPEED = 200.0
 acceleration = 0.2
 
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=699175458]
+z_index = 10
+offset_left = -55.0
+offset_top = -37.0
+offset_right = 55.0
+offset_bottom = -30.0
+show_percentage = false
+
 [node name="Face" type="Sprite2D" parent="." unique_id=2089251881]
 z_index = 2
 texture_filter = 1

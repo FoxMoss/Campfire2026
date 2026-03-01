@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8rxese5axuhs"]
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
@@ -10,6 +11,7 @@ size = Vector2(1192, 20)
 size = Vector2(20, 648)
 
 [node name="Main" type="Node2D" unique_id=857453243]
+script = ExtResource("1_r0du0")
 
 [node name="Player" parent="." unique_id=1351451479 instance=ExtResource("1_glv2v")]
 position = Vector2(0, 103)
@@ -43,3 +45,12 @@ shape = SubResource("RectangleShape2D_r0du0")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ScreenBoundries" unique_id=744871104]
 position = Vector2(0, 334)
 shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
+z_index = 10
+offset_left = -528.0
+offset_top = -303.0
+offset_right = 527.0
+offset_bottom = -278.8209
+max_value = 60.0
+show_percentage = false

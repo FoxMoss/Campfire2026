@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 @export var acceleration = 0.1
 var mode = 0 # mode 0 is below and 1 is above
+var not_burning = 100
 
 func _physics_process(delta: float) -> void:
 	if mode == 0:
@@ -33,8 +34,12 @@ func _physics_process(delta: float) -> void:
 		if(mode != 1):
 			velocity += Vector2.from_angle($Face.rotation).normalized() * SPEED
 		mode = 1
+		if $ProgressBar.value >= 0:
+			$ProgressBar.value -= 50 * delta 
 	else: #below ground
 		mode = 0
+		if $ProgressBar.value < 100:
+			$ProgressBar.value += 15 * delta 
 	
 
 	move_and_slide()
