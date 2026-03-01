@@ -11,6 +11,8 @@ func _physics_process(delta: float) -> void:
 	var horizontal_direction := Input.get_axis("ui_left", "ui_right")
 	var vertical_direction := Input.get_axis("ui_up", "ui_down")
 	
+	$Face.rotation = lerp_angle($Face.rotation, Vector2(horizontal_direction, vertical_direction).angle(), 0.3)
+	
 	if horizontal_direction:
 		velocity.x += horizontal_direction * SPEED * acceleration
 		velocity.x = clamp(velocity.x, -SPEED, SPEED)

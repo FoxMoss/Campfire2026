@@ -13,15 +13,16 @@ SPEED = 200.0
 acceleration = 0.2
 
 [node name="Face" type="Sprite2D" parent="." unique_id=2089251881]
+z_index = 2
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("2_kpjcp")
 
+[node name="Gun" type="Sprite2D" parent="Face" unique_id=1554944981]
+z_index = 2
+texture_filter = 1
+position = Vector2(7.75, 1)
+texture = ExtResource("3_kne1u")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=11774029]
 shape = SubResource("RectangleShape2D_kpjcp")
-
-[node name="Gun" type="Sprite2D" parent="." unique_id=1554944981]
-texture_filter = 1
-position = Vector2(31, 4)
-scale = Vector2(4, 4)
-texture = ExtResource("3_kne1u")
