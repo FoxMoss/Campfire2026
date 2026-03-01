@@ -8,6 +8,7 @@
 [node name="Player" type="CharacterBody2D" unique_id=1351451479]
 script = ExtResource("1_xhfnw")
 SPEED = 200.0
+acceleration = 0.2
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1187834208]
 position = Vector2(-5.9604645e-08, 5.9604645e-08)

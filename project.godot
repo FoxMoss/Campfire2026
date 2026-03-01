@@ -19,9 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/resizable=false
 window/stretch/mode="viewport"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 

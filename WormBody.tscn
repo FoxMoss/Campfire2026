@@ -7,6 +7,7 @@
 script = ExtResource("1_d1bww")
 
 [node name="Wormbody" type="Sprite2D" parent="." unique_id=1297246942]
+visible = false
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("1_7sdjr")
