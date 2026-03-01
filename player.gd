@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var acceleration = 0.1
+var mode = 0 # mode 0 is below and 1 is above
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -19,12 +20,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-	if vertical_direction:
+	if vertical_direction && mode == 0:
 		velocity.y += vertical_direction * SPEED * acceleration
 		velocity.y = clamp(velocity.y, -SPEED, SPEED)
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
+	if position.y < 0: #above ground
+		mode = 1
+	else: #below ground
+		mode = 0
 	
 
 	move_and_slide()
