@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8rxese5axuhs"]
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
-[ext_resource type="Script" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://6yefrhh2mwnn" path="res://bird.tscn" id="4_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://dqfgqxeuij3tx" path="res://blast.png" id="4_fos0i"]
 
@@ -83,3 +83,12 @@ offset_right = 527.0
 offset_bottom = -278.8209
 max_value = 60.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=1768883984]
+offset_left = 346.0
+offset_top = -270.0
+offset_right = 527.0
+offset_bottom = -236.0
+theme_override_font_sizes/font_size = 24
+text = "0/** Eliminated"
+horizontal_alignment = 2

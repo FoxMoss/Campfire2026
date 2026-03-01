@@ -29,3 +29,4 @@ func _process(delta: float) -> void:
 	
 	
 func remove_tail():
+	pass
