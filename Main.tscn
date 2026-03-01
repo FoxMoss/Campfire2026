@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8rxese5axuhs"]
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://cj40hmo7lbrwa" path="res://bird.gd" id="3_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="4_fos0i"]
@@ -15,6 +16,7 @@ size = Vector2(20, 648)
 radius = 20.615528
 
 [node name="Main" type="Node2D" unique_id=857453243]
+script = ExtResource("1_r0du0")
 
 [node name="Player" parent="." unique_id=1351451479 instance=ExtResource("1_glv2v")]
 position = Vector2(0, 103)
@@ -70,3 +72,11 @@ texture = ExtResource("4_fos0i")
 shape = SubResource("CircleShape2D_3dxm6")
 
 [node name="Timer" type="Timer" parent="BirdManager/Bird" unique_id=818038042]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
+z_index = 10
+offset_left = -528.0
+offset_top = -303.0
+offset_right = 527.0
+offset_bottom = -278.8209
+max_value = 60.0
+show_percentage = false

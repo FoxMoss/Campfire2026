@@ -20,6 +20,8 @@ func _ready() -> void:
 	bird_high = get_parent().get_child(1) as Node2D
 	global_position.x = randf_range(bird_low.global_position.x, bird_high.global_position.x)
 	global_position.y = randf_range(bird_low.global_position.y, bird_high.global_position.y)
+	
+	
 
 func _physics_process(delta: float) -> void:
 	pass
