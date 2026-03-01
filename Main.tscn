@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
-[ext_resource type="PackedScene" uid="uid://6yefrhh2mwnn" path="res://bird.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://7k6aut2ejpom" path="res://bird.tscn" id="4_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://dqfgqxeuij3tx" path="res://blast.png" id="4_fos0i"]
+[ext_resource type="PackedScene" uid="uid://b4j6cgfgc4kbr" path="res://bullet_pickup.tscn" id="5_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(1192, 20)
@@ -17,6 +18,7 @@ height = 218.0
 
 [node name="Main" type="Node2D" unique_id=857453243]
 script = ExtResource("1_r0du0")
+bullet_pickup = ExtResource("5_fos0i")
 
 [node name="Player" parent="." unique_id=1351451479 instance=ExtResource("1_glv2v")]
 position = Vector2(0, 103)
@@ -73,7 +75,18 @@ position = Vector2(-2, 100)
 shape = SubResource("CapsuleShape2D_3dxm6")
 
 [node name="Bird" parent="BirdManager" unique_id=1357511093 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
+position = Vector2(-677, -220)
+
+[node name="BulletManager" type="Node" parent="." unique_id=1101800530]
+
+[node name="BulletLowValue" type="Node2D" parent="BulletManager" unique_id=409323379]
+position = Vector2(-548, 41)
+
+[node name="BulletHighValue" type="Node2D" parent="BulletManager" unique_id=539832210]
+position = Vector2(548, 293)
+
+[node name="BulletPickup" parent="BulletManager" unique_id=1400264868 instance=ExtResource("5_fos0i")]
+position = Vector2(-669, 112)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
 z_index = 10
