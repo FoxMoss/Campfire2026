@@ -60,6 +60,7 @@ func _on_timer_timeout() -> void:
 		bird_hover_pos.y = randf_range(bird_low.global_position.y, bird_high.global_position.y)
 		
 	if(mode == AIMode.BIRD_DYING):
+		get_parent().get_parent().eliminate_count += 1
 		queue_free()
 	
 

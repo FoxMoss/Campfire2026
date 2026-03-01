@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://b66kcoakylweo" path="res://background.png" id="3_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://6yefrhh2mwnn" path="res://bird.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://7k6aut2ejpom" path="res://bird.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://0p4yfhxlvxhs" path="res://Blast.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://b4j6cgfgc4kbr" path="res://bullet_pickup.tscn" id="5_fos0i"]
 
@@ -111,6 +111,8 @@ position = Vector2(548, 293)
 
 [node name="BulletPickup" parent="BulletManager" unique_id=1400264868 instance=ExtResource("5_fos0i")]
 position = Vector2(-669, 112)
+collision_layer = 8
+collision_mask = 8
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
 z_index = 10
@@ -122,10 +124,12 @@ max_value = 60.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="." unique_id=1768883984]
+z_index = 7
 offset_left = 346.0
 offset_top = -270.0
 offset_right = 527.0
 offset_bottom = -236.0
 theme_override_font_sizes/font_size = 24
-text = "0/** Eliminated"
+text = "**/** Eliminated
+**/** Ammo"
 horizontal_alignment = 2

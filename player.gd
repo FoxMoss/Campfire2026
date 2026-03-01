@@ -71,3 +71,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_worm_body_area_entered(area: Area2D) -> void:
 	$WormBody.remove_tail()
+
+
+func _on_pickup_area_area_entered(area: Area2D) -> void:
+	bullets += 1
+	area.queue_free()

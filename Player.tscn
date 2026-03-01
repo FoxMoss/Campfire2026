@@ -9,6 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cxr5p"]
+radius = 23.345236
+
 [node name="Player" type="CharacterBody2D" unique_id=1351451479]
 script = ExtResource("1_xhfnw")
 SPEED = 200.0
@@ -42,4 +45,12 @@ shape = SubResource("RectangleShape2D_kpjcp")
 [node name="WormBody" parent="." unique_id=2038653203 instance=ExtResource("5_cxr5p")]
 position = Vector2(-2, 1)
 
+[node name="PickupArea" type="Area2D" parent="." unique_id=1666949801]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=377545489]
+shape = SubResource("CircleShape2D_cxr5p")
+
 [connection signal="area_entered" from="WormBody" to="." method="_on_worm_body_area_entered"]
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]
