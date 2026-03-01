@@ -27,10 +27,11 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED/10)
 		
 		if vertical_direction:
-			velocity.y += vertical_direction * SPEED * acceleration
+			velocity.y += vertical_direction * SPEED * acceleration 
 			velocity.y = clamp(velocity.y, -SPEED, SPEED)
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED/10)
+		velocity.y += min(pow(0.2, global_position.y/3- 20), 1)*20
 	else:
 		velocity.y += 3
 		var horizontal_direction := Input.get_axis("ui_left", "ui_right")
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	
 	if position.y < 0: #above ground
 		if(mode != 1):
-			velocity += Vector2.from_angle($Face.rotation).normalized() * SPEED * 0.5
+			velocity += Vector2.from_angle($Face.rotation).normalized() * SPEED * 0.3
 		mode = 1
 		if $ProgressBar.value >= 0:
 			$ProgressBar.value -= 50 * delta 

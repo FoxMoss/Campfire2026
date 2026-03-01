@@ -1,6 +1,6 @@
 extends Node2D
 
-const segments = 20
+const segments = 6
 var segments_storage = {}
 var segments_position_storage = {}
 var dist = 6*4
@@ -28,3 +28,4 @@ func _process(delta: float) -> void:
 		segments_position_storage[i] = (segments_storage[i] as Node2D).global_position
 	
 	
+func remove_tail():

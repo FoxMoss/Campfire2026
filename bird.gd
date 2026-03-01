@@ -15,13 +15,38 @@ var mode = AIMode.BIRD_HOVERING
 var bird_low: Node2D
 var bird_high: Node2D
 
+var bird_hover_pos: Vector2 = Vector2.ZERO
+var target_pos: Vector2 = Vector2.ZERO
+
+
 func _ready() -> void:
 	bird_low = get_parent().get_child(0) as Node2D
 	bird_high = get_parent().get_child(1) as Node2D
-	global_position.x = randf_range(bird_low.global_position.x, bird_high.global_position.x)
-	global_position.y = randf_range(bird_low.global_position.y, bird_high.global_position.y)
-	
+	bird_hover_pos.x = randf_range(bird_low.global_position.x, bird_high.global_position.x)
+	bird_hover_pos.y = randf_range(bird_low.global_position.y, bird_high.global_position.y)
+	target_pos = bird_hover_pos + Vector2(randf_range(-20, 20), randf_range(-20, 20))
+	global_position = bird_hover_pos
+	$Timer.wait_time = randf_range(0.5, 0.9)
 	
 
 func _physics_process(delta: float) -> void:
+	global_position.x = lerp(global_position.x, target_pos.x, 0.05)
+	global_position.y = lerp(global_position.y, target_pos.y, 0.05)
 	pass
+
+
+func _on_timer_timeout() -> void:
+	$Timer.wait_time = randf_range(0.5, 0.9)
+	$Bird.flip_h = !$Bird.flip_h
+	if(mode == AIMode.BIRD_HOVERING):
+		target_pos = bird_hover_pos + Vector2(randf_range(-50, 50), randf_range(-50, 50))
+		if(randi_range(0, 10) == 0):
+			mode = AIMode.BIRD_ATTACK
+			
+			target_pos = Vector2(get_node("/root/Main/Player").global_position.x + randf_range(-100, 100), 0)
+	if(mode == AIMode.BIRD_ATTACK && global_position.distance_to(target_pos) < 10):
+		mode = AIMode.BIRD_HOVERING
+			
+		bird_hover_pos.x = randf_range(bird_low.global_position.x, bird_high.global_position.x)
+		bird_hover_pos.y = randf_range(bird_low.global_position.y, bird_high.global_position.y)
+	

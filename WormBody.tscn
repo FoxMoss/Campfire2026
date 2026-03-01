@@ -3,11 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://5mygiuds317" path="res://wormbody.png" id="1_7sdjr"]
 [ext_resource type="Script" uid="uid://c3p7vsohc2ar4" path="res://worm_body.gd" id="1_d1bww"]
 
-[node name="WormBody" type="Node2D" unique_id=2038653203]
-script = ExtResource("1_d1bww")
+[sub_resource type="CircleShape2D" id="CircleShape2D_d1bww"]
+radius = 3.2882366
 
-[node name="Wormbody" type="Sprite2D" parent="." unique_id=1297246942]
-visible = false
-texture_filter = 1
+[node name="WormBody" type="Area2D" unique_id=1623051554]
+gravity = 980.0
+script = ExtResource("1_d1bww")
+gravity = 980.0
+
+[node name="Wormbody" type="CollisionShape2D" parent="." unique_id=261003436]
 scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_d1bww")
+
+[node name="Wormbody" type="Sprite2D" parent="Wormbody" unique_id=1297246942]
+texture_filter = 1
 texture = ExtResource("1_7sdjr")

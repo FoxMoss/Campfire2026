@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://8rxese5axuhs"]
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
-[ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
-[ext_resource type="Script" uid="uid://cj40hmo7lbrwa" path="res://bird.gd" id="3_cm0pq"]
-[ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="4_fos0i"]
+[ext_resource type="Script" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://6yefrhh2mwnn" path="res://bird.tscn" id="4_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://dqfgqxeuij3tx" path="res://blast.png" id="4_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(1192, 20)
@@ -12,8 +11,9 @@ size = Vector2(1192, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0du0"]
 size = Vector2(20, 648)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3dxm6"]
-radius = 20.615528
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dxm6"]
+radius = 16.0
+height = 218.0
 
 [node name="Main" type="Node2D" unique_id=857453243]
 script = ExtResource("1_r0du0")
@@ -21,8 +21,6 @@ script = ExtResource("1_r0du0")
 [node name="Player" parent="." unique_id=1351451479 instance=ExtResource("1_glv2v")]
 position = Vector2(0, 103)
 camera = NodePath("../Camera2D")
-
-[node name="WormBody" parent="Player" unique_id=2038653203 instance=ExtResource("2_uu6xs")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=377352649]
 
@@ -54,24 +52,29 @@ shape = SubResource("RectangleShape2D_uu6xs")
 [node name="BirdManager" type="Node" parent="." unique_id=587903189]
 
 [node name="BirdLowValue" type="Node2D" parent="BirdManager" unique_id=1414511708]
-position = Vector2(-499, -275)
+position = Vector2(-512, -237)
 
 [node name="BirdHighValue" type="Node2D" parent="BirdManager" unique_id=1106226052]
 position = Vector2(479, -142)
 
-[node name="Bird" type="Area2D" parent="BirdManager" unique_id=1586508407]
-position = Vector2(-677, -221)
-script = ExtResource("3_cm0pq")
+[node name="Blasts" type="Node" parent="BirdManager" unique_id=1546740708]
 
-[node name="Bird" type="Sprite2D" parent="BirdManager/Bird" unique_id=894368083]
+[node name="Blast" type="Area2D" parent="BirdManager/Blasts" unique_id=2091729439]
+position = Vector2(177, 3)
+
+[node name="Blast" type="Sprite2D" parent="BirdManager/Blasts/Blast" unique_id=1900316368]
 texture_filter = 1
+position = Vector2(0, 120)
 scale = Vector2(4, 4)
 texture = ExtResource("4_fos0i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdManager/Bird" unique_id=1755103558]
-shape = SubResource("CircleShape2D_3dxm6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdManager/Blasts/Blast" unique_id=127376675]
+position = Vector2(-2, 100)
+shape = SubResource("CapsuleShape2D_3dxm6")
 
-[node name="Timer" type="Timer" parent="BirdManager/Bird" unique_id=818038042]
+[node name="Bird" parent="BirdManager" unique_id=1357511093 instance=ExtResource("4_cm0pq")]
+position = Vector2(-677, -221)
+
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
 z_index = 10
 offset_left = -528.0
