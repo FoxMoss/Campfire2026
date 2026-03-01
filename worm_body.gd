@@ -15,7 +15,8 @@ func _ready() -> void:
 		add_child(segments_storage[i] as Node2D)
 
 func _process(delta: float) -> void:
-	if(segments == 0):
+	if(segments <= 0):
+		get_tree().change_scene_to_file("res://game_over.tscn")
 		return
 	(segments_storage[0] as Node2D).global_position = self.global_position
 	

@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://b66kcoakylweo" path="res://background.png" id="3_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://6yefrhh2mwnn" path="res://bird.tscn" id="4_cm0pq"]
-[ext_resource type="PackedScene" uid="uid://0p4yfhxlvxhs" path="res://Blast.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://b4j6cgfgc4kbr" path="res://bullet_pickup.tscn" id="5_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
@@ -64,42 +62,6 @@ position = Vector2(-512, -237)
 position = Vector2(479, -142)
 
 [node name="Blasts" type="Node" parent="BirdManager" unique_id=1546740708]
-
-[node name="Bird" parent="BirdManager" unique_id=1357511093 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird2" parent="BirdManager" unique_id=2060458054 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird3" parent="BirdManager" unique_id=898967442 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird4" parent="BirdManager" unique_id=214798190 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird5" parent="BirdManager" unique_id=1703893200 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird6" parent="BirdManager" unique_id=431934483 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird7" parent="BirdManager" unique_id=509380166 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird8" parent="BirdManager" unique_id=657800076 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
-
-[node name="Bird9" parent="BirdManager" unique_id=1327749912 instance=ExtResource("4_cm0pq")]
-position = Vector2(-677, -221)
-blast_scene = ExtResource("4_fos0i")
 
 [node name="BulletManager" type="Node" parent="." unique_id=1101800530]
 
