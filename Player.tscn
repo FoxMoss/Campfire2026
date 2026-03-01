@@ -20,6 +20,7 @@ offset_left = -55.0
 offset_top = -37.0
 offset_right = 55.0
 offset_bottom = -30.0
+value = 100.0
 show_percentage = false
 
 [node name="Face" type="Sprite2D" parent="." unique_id=2089251881]

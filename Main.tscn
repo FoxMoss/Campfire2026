@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
-[ext_resource type="Script" uid="uid://cj40hmo7lbrwa" path="res://bird.gd" id="3_cm0pq"]
+[ext_resource type="Script" path="res://bird.gd" id="3_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="4_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
@@ -72,6 +72,7 @@ texture = ExtResource("4_fos0i")
 shape = SubResource("CircleShape2D_3dxm6")
 
 [node name="Timer" type="Timer" parent="BirdManager/Bird" unique_id=818038042]
+
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
 z_index = 10
 offset_left = -528.0
@@ -80,3 +81,12 @@ offset_right = 527.0
 offset_bottom = -278.8209
 max_value = 60.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=1768883984]
+offset_left = 346.0
+offset_top = -270.0
+offset_right = 527.0
+offset_bottom = -236.0
+theme_override_font_sizes/font_size = 24
+text = "0/** Eliminated"
+horizontal_alignment = 2

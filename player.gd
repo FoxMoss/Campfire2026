@@ -9,6 +9,8 @@ extends CharacterBody2D
 var mode = 0 # mode 0 is below and 1 is above
 var not_burning = 100
 
+var max_bullets = 20
+var bullets = 5
 
 
 func _physics_process(delta: float) -> void:
@@ -38,7 +40,8 @@ func _physics_process(delta: float) -> void:
 	
 		$Face.rotation = lerp_angle($Face.rotation, Vector2(horizontal_direction, vertical_direction).angle(), 0.3)
 		
-		if(Input.is_action_just_pressed("shoot")):
+		if(Input.is_action_just_pressed("shoot") && bullets > 0):
+			bullets -= 1
 			var new_bullet = bullet.instantiate() as Node2D
 			new_bullet.global_position = global_position
 			new_bullet.rotation = $Face.rotation
@@ -50,7 +53,7 @@ func _physics_process(delta: float) -> void:
 			velocity += Vector2.from_angle($Face.rotation).normalized() * SPEED * 0.5
 		mode = 1
 		if $ProgressBar.value >= 0:
-			$ProgressBar.value -= 50 * delta 
+			$ProgressBar.value -= 25 * delta 
 	else: #below ground
 		mode = 0
 		if $ProgressBar.value < 100:
