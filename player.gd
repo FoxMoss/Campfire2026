@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
+@export var camera:NodePath
 
 @export var SPEED = 300.0
-
 @export var acceleration = 0.1
 
 func _physics_process(delta: float) -> void:
@@ -22,5 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = clamp(velocity.y, -SPEED, SPEED)
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	
 
 	move_and_slide()
