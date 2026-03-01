@@ -2,12 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://cj40hmo7lbrwa" path="res://bird.gd" id="3_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="4_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(1192, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0du0"]
 size = Vector2(20, 648)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dxm6"]
+radius = 20.615528
 
 [node name="Main" type="Node2D" unique_id=857453243]
 
@@ -43,3 +48,25 @@ shape = SubResource("RectangleShape2D_r0du0")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ScreenBoundries" unique_id=744871104]
 position = Vector2(0, 334)
 shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="BirdManager" type="Node" parent="." unique_id=587903189]
+
+[node name="BirdLowValue" type="Node2D" parent="BirdManager" unique_id=1414511708]
+position = Vector2(-499, -275)
+
+[node name="BirdHighValue" type="Node2D" parent="BirdManager" unique_id=1106226052]
+position = Vector2(479, -142)
+
+[node name="Bird" type="Area2D" parent="BirdManager" unique_id=1586508407]
+position = Vector2(-677, -221)
+script = ExtResource("3_cm0pq")
+
+[node name="Bird" type="Sprite2D" parent="BirdManager/Bird" unique_id=894368083]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("4_fos0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdManager/Bird" unique_id=1755103558]
+shape = SubResource("CircleShape2D_3dxm6")
+
+[node name="Timer" type="Timer" parent="BirdManager/Bird" unique_id=818038042]
