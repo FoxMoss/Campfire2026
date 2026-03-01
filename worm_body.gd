@@ -1,6 +1,6 @@
 extends Node2D
 
-const segments = 6
+var segments = 6
 var segments_storage = {}
 var segments_position_storage = {}
 var dist = 6*4
@@ -15,6 +15,8 @@ func _ready() -> void:
 		add_child(segments_storage[i] as Node2D)
 
 func _process(delta: float) -> void:
+	if(segments == 0):
+		return
 	(segments_storage[0] as Node2D).global_position = self.global_position
 	
 	for i in range(1, segments):
@@ -29,4 +31,7 @@ func _process(delta: float) -> void:
 	
 	
 func remove_tail():
-	pass
+	segments -= 1
+	(segments_storage[segments] as Node2D).queue_free()
+	segments_storage.erase(segments)
+	segments_position_storage.erase(segments)

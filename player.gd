@@ -60,5 +60,14 @@ func _physics_process(delta: float) -> void:
 		if $ProgressBar.value < 100:
 			$ProgressBar.value += 15 * delta 
 	
+	if($ProgressBar.value <= 0):
+		$WormBody.remove_tail()
+		$ProgressBar.value = 100
+	
 
 	move_and_slide()
+
+
+
+func _on_worm_body_area_entered(area: Area2D) -> void:
+	$WormBody.remove_tail()

@@ -41,3 +41,5 @@ shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="WormBody" parent="." unique_id=2038653203 instance=ExtResource("5_cxr5p")]
 position = Vector2(-2, 1)
+
+[connection signal="area_entered" from="WormBody" to="." method="_on_worm_body_area_entered"]

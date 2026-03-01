@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://0p4yfhxlvxhs"]
+
+[ext_resource type="Texture2D" uid="uid://dqfgqxeuij3tx" path="res://blast.png" id="1_f3ncc"]
+[ext_resource type="Script" uid="uid://derrgdjv6hxqf" path="res://blast.gd" id="1_smrnc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dxm6"]
+radius = 16.0
+height = 218.0
+
+[node name="Blast" type="Area2D" unique_id=490699805]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_smrnc")
+
+[node name="Blast" type="Sprite2D" parent="." unique_id=139658582]
+texture_filter = 1
+position = Vector2(0, 120)
+scale = Vector2(4, 4)
+texture = ExtResource("1_f3ncc")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1891135501]
+position = Vector2(-1, 143)
+shape = SubResource("CapsuleShape2D_3dxm6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1789465368]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
