@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8rxese5axuhs"]
 
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://dhjr8he6xwee8" path="res://WormBody.tscn" id="2_uu6xs"]
 
 [node name="Main" type="Node2D" unique_id=857453243]
 
@@ -9,3 +10,6 @@ position = Vector2(573, 329)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=377352649]
 position = Vector2(573, 329)
+
+[node name="WormBody" parent="." unique_id=2038653203 instance=ExtResource("2_uu6xs")]
+position = Vector2(54, 25)
