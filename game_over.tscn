@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvelmfjbksm08"]
 
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="1_y26ei"]
-[ext_resource type="Script" path="res://game_over.gd" id="1_yxx3c"]
+[ext_resource type="Script" uid="uid://y3pttlcl8t48" path="res://game_over.gd" id="1_yxx3c"]
 
 [node name="GameOver" type="Node2D" unique_id=121737374]
 script = ExtResource("1_yxx3c")
@@ -10,23 +10,23 @@ script = ExtResource("1_yxx3c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331953704]
 texture_filter = 1
-position = Vector2(-158, 2)
+position = Vector2(-232, -24)
 scale = Vector2(8, 8)
 texture = ExtResource("1_y26ei")
 
 [node name="Label" type="Label" parent="." unique_id=1186379394]
-offset_left = -78.0
-offset_top = -53.0
-offset_right = 226.0
-offset_bottom = 2.0
+offset_left = -152.0
+offset_top = -79.0
+offset_right = 152.0
+offset_bottom = -24.0
 theme_override_font_sizes/font_size = 40
 text = "You have died..."
 
 [node name="Button" type="Button" parent="." unique_id=405480065]
-offset_left = -72.0
-offset_top = 10.0
-offset_right = 225.0
-offset_bottom = 41.0
+offset_left = -146.0
+offset_top = -16.0
+offset_right = 151.0
+offset_bottom = 15.0
 text = "Restart"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

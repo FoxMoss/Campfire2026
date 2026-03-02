@@ -25,6 +25,17 @@ theme_override_font_sizes/font_size = 40
 text = "early worm gets the bird"
 horizontal_alignment = 1
 
+[node name="Label" type="Label" parent="Label" unique_id=1046210111]
+layout_mode = 0
+offset_left = -143.0
+offset_top = 386.0
+offset_right = 618.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 11
+text = "*bird may contain traces of void"
+horizontal_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1591350916]
 texture_filter = 1
 position = Vector2(-340, -202)
