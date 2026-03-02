@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://b66kcoakylweo" path="res://background.png" id="3_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://7k6aut2ejpom" path="res://bird.tscn" id="4_cm0pq"]
-[ext_resource type="PackedScene" uid="uid://0p4yfhxlvxhs" path="res://Blast.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://b4j6cgfgc4kbr" path="res://bullet_pickup.tscn" id="5_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
@@ -18,9 +16,10 @@ script = ExtResource("1_r0du0")
 bullet_pickup = ExtResource("5_fos0i")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1113944146]
-modulate = Color(1, 1, 1, 0.1882353)
+modulate = Color(1, 1, 1, 0.36078432)
 z_index = -50
 texture_filter = 1
+position = Vector2(-1, 1)
 scale = Vector2(4, 4)
 texture = ExtResource("3_3dxm6")
 
@@ -75,8 +74,6 @@ position = Vector2(548, 293)
 
 [node name="BulletPickup" parent="BulletManager" unique_id=1400264868 instance=ExtResource("5_fos0i")]
 position = Vector2(-669, 112)
-collision_layer = 8
-collision_mask = 8
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1772819610]
 z_index = 10

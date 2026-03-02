@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://boehi0xfrps8x"]
+
+[ext_resource type="Script" uid="uid://cycr6mplpdaqr" path="res://level_up.gd" id="1_du2hl"]
+[ext_resource type="Texture2D" uid="uid://bd5wq4nbp70qb" path="res://mission_icon.png" id="2_fxo1f"]
+[ext_resource type="Texture2D" uid="uid://d1gssdcx825bu" path="res://arrow.png" id="2_lt80l"]
+
+[node name="LevelUp" type="Node2D" unique_id=121737374]
+script = ExtResource("1_du2hl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=617877905]
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1585565101]
+texture_filter = 1
+position = Vector2(1, -174)
+scale = Vector2(4, 4)
+texture = ExtResource("2_lt80l")
+
+[node name="MissionObject" type="Node2D" parent="." unique_id=1817598271]
+visible = false
+
+[node name="MissionIcon" type="Sprite2D" parent="MissionObject" unique_id=1887824843]
+texture_filter = 1
+position = Vector2(0, -32)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fxo1f")
+
+[node name="Label" type="Label" parent="MissionObject" unique_id=1984992942]
+offset_left = -100.0
+offset_top = 32.0
+offset_right = 100.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 24
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="MissionContainer" type="Node2D" parent="." unique_id=1553981396]
+
+[node name="Timer" type="Timer" parent="." unique_id=1765026120]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
