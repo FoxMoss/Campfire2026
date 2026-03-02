@@ -3,6 +3,9 @@ extends Node
 const levels = [
 	{"level":"Level 1", "quota": 1, "build_instructions": [["add_bird", 1]]},
 	{"level":"Level 2", "quota": 3, "build_instructions": [["add_bird", 3]]},
+	{"level":"Level 3", "quota": 5, "build_instructions": [["add_bird", 8]]},
+	{"level":"Level 4", "quota": 10, "build_instructions": [["add_bird", 15]]},
+	{"level":"Level 5", "quota": 15, "build_instructions": [["add_bird", 25]]},
 	{"level":"The End", "quota": 0, "build_instructions": [["end"]]}
 ]
 
