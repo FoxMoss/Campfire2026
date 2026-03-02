@@ -93,3 +93,10 @@ theme_override_font_sizes/font_size = 24
 text = "**/** Eliminated
 **/** Ammo"
 horizontal_alignment = 2
+
+[node name="QuotaTimer" type="Timer" parent="." unique_id=1127530298]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="QuotaTimer" to="." method="_on_quota_timer_timeout"]

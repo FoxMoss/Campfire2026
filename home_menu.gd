@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
+	get_node("/root/Static").segments = 6
+	get_node("/root/Static").current_level = 0
 	get_tree().change_scene_to_file("res://level_up.tscn")
 	pass # Replace with function body.

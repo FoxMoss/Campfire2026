@@ -20,9 +20,15 @@ func _ready() -> void:
 	
 	since_last_bullet = Time.get_ticks_msec()
 
-
+var time_since_done = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if time_since_done == 0 && eliminate_count >= quota:
+		time_since_done = Time.get_ticks_msec()
+	if(time_since_done != 0 && Time.get_ticks_msec() - time_since_done > 1000):
+		_on_quota_timer_timeout()
+		
 	$ProgressBar.value = (Time.get_ticks_msec() - start_time) / 1000
 	if $ProgressBar.value >= 60:
 		start_time = Time.get_ticks_msec()
@@ -43,3 +49,9 @@ func generate_bullet() -> void:
 	var spawn_bullet = bullet_pickup.instantiate() as Node2D
 	spawn_bullet.global_position = bullet_pos
 	add_child(spawn_bullet)
+
+
+func _on_quota_timer_timeout() -> void:
+	get_node("/root/Static").current_level += 1
+	get_node("/root/Main").queue_free()
+	get_tree().change_scene_to_file("res://level_up.tscn")
