@@ -1,6 +1,5 @@
 extends Node2D
 var start_time
-var day = true
 var eliminate_count = 0
 var quota = 5
 
@@ -26,10 +25,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$ProgressBar.value = (Time.get_ticks_msec() - start_time) / 1000
 	if $ProgressBar.value >= 60:
-		day = !day
 		start_time = Time.get_ticks_msec()
 		get_node("/root/Static").current_level += 1
 		get_node("/root/Main").queue_free()
+		if eliminate_count < quota:
+			$Player/WormBody.remove_tail()
 		get_tree().change_scene_to_file("res://level_up.tscn")
 	
 	$Label.text = str(eliminate_count) +"/"+ str(quota) +" Eliminated \nAmmo: " + str($Player.bullets) + "/" + str($Player.max_bullets)

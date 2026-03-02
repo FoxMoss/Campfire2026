@@ -34,6 +34,8 @@ func _process(delta: float) -> void:
 	
 	
 func remove_tail():
+	if(segments <= 0):
+		return
 	segments -= 1
 	get_node("/root/Static").segments = segments
 	(segments_storage[segments] as Node2D).queue_free()
