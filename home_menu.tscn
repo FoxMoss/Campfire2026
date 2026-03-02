@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b7y7e21eyw2ee"]
+
+[ext_resource type="Script" uid="uid://dvt4vyw3rxayw" path="res://home_menu.gd" id="1_j6liv"]
+
+[node name="HomeMenu" type="Node2D" unique_id=1212027868]
+script = ExtResource("1_j6liv")
+
+[node name="Button" type="Button" parent="." unique_id=908226588]
+offset_left = -148.0
+offset_top = -20.0
+offset_right = 149.0
+offset_bottom = 11.0
+text = "Start"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1791482394]
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

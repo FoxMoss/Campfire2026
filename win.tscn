@@ -1,28 +1,35 @@
-[gd_scene format=3 uid="uid://b7h2dqyn6jiex"]
+[gd_scene format=3 uid="uid://ct8x4v0e3nynm"]
 
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="1_wao2c"]
 
-[node name="GameOver" type="Node2D" unique_id=121737374]
+[node name="Win" type="Node2D" unique_id=121737374]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=617877905]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=331953704]
 texture_filter = 1
-position = Vector2(-158, 2)
+position = Vector2(-158, -57)
 scale = Vector2(8, 8)
 texture = ExtResource("1_wao2c")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1403142357]
+texture_filter = 1
+position = Vector2(158, -57)
+scale = Vector2(-8, 8)
+texture = ExtResource("1_wao2c")
+
 [node name="Label" type="Label" parent="." unique_id=1186379394]
-offset_left = -78.0
-offset_top = -53.0
-offset_right = 226.0
-offset_bottom = 2.0
+offset_left = -157.0
+offset_top = -71.0
+offset_right = 147.0
+offset_bottom = -16.0
 theme_override_font_sizes/font_size = 40
 text = "You win!"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=405480065]
-offset_left = -72.0
-offset_top = 10.0
-offset_right = 225.0
-offset_bottom = 41.0
+offset_left = -148.5
+offset_top = 2.0
+offset_right = 148.5
+offset_bottom = 33.0
 text = "Restart"
