@@ -25,9 +25,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ProgressBar.value = (Time.get_ticks_msec() - start_time) / 1000
-	if $ProgressBar.value >= 60:
+	if $ProgressBar.value >= 10:
 		day = !day
 		start_time = Time.get_ticks_msec()
+		get_node("/root/Static").current_level += 1
+		get_node("/root/Main").queue_free()
+		get_tree().change_scene_to_file("res://level_up.tscn")
 	
 	$Label.text = str(eliminate_count) +"/"+ str(quota) +" Eliminated \nAmmo: " + str($Player.bullets) + "/" + str($Player.max_bullets)
 	

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://7k6aut2ejpom"]
+[gd_scene format=3 uid="uid://6yefrhh2mwnn"]
 
 [ext_resource type="Script" uid="uid://cj40hmo7lbrwa" path="res://bird.gd" id="1_crnqq"]
 [ext_resource type="PackedScene" uid="uid://0p4yfhxlvxhs" path="res://Blast.tscn" id="2_cchwj"]
@@ -9,7 +9,7 @@
 radius = 20.615528
 
 [node name="Bird" type="Area2D" unique_id=1357511093]
-collision_layer = 2
+collision_layer = 6
 collision_mask = 2
 script = ExtResource("1_crnqq")
 blast_scene = ExtResource("2_cchwj")
