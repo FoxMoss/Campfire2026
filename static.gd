@@ -3,15 +3,15 @@ extends Node
 const levels = [
 	{"level":"Level 1", "quota": 1, "build_instructions": [["add_bird", 1]]},
 	{"level":"Level 2", "quota": 3, "build_instructions": [["add_bird", 3]]},
-	{"level":"Level 3", "quota": 5, "build_instructions": [["add_bird", 8]]},
+	{"level":"Level 3", "quota": 4, "build_instructions": [["add_bird", 4]]},
 	{"level":"Health Reset", "quota": 0, "build_instructions": [["up_health", 6]]},
-	{"level":"Level 4", "quota": 10, "build_instructions": [["add_bird", 15]]},
-	{"level":"Level 5", "quota": 15, "build_instructions": [["add_bird2", 1]]},
-	{"level":"Level 6", "quota": 15, "build_instructions": [["add_bird2", 1], ["add_bird", 10]]},
-	{"level":"Level 7", "quota": 20, "build_instructions": [["add_bird2", 4], ["add_bird", 15]]},
-	{"level":"Level 8", "quota": 25, "build_instructions": [["add_bird2", 4], ["add_bird", 30]]},
+	{"level":"Level 4", "quota": 5, "build_instructions": [["add_bird", 6]]},
+	{"level":"Level 5", "quota": 1, "build_instructions": [["add_bird2", 1]]},
+	{"level":"Level 6", "quota": 6, "build_instructions": [["add_bird2", 1], ["add_bird", 7]]},
+	{"level":"Level 7", "quota": 8, "build_instructions": [["add_bird2", 4], ["add_bird", 10]]},
+	{"level":"Level 8", "quota": 10, "build_instructions": [["add_bird2", 4], ["add_bird", 15]]},
 	{"level":"Health Reset", "quota": 0, "build_instructions": [["up_health", 6]]},
-	{"level":"Level 9", "quota": 30, "build_instructions": [["add_bird2", 4], ["add_bird", 40]]},
+	{"level":"Level 9", "quota": 15, "build_instructions": [["add_bird2", 4], ["add_bird", 20]]},
 	{"level":"The End", "quota": 0, "build_instructions": [["end"]]}
 ]
 
