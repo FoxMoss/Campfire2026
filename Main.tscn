@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bv51l0jj03v5u" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://qi7gjwmsw54v" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://b66kcoakylweo" path="res://background.png" id="3_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://7k6aut2ejpom" path="res://bird.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://b4j6cgfgc4kbr" path="res://bullet_pickup.tscn" id="5_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
@@ -63,8 +62,6 @@ position = Vector2(-512, -237)
 position = Vector2(479, -142)
 
 [node name="Blasts" type="Node" parent="BirdManager" unique_id=1546740708]
-
-[node name="Bird" parent="BirdManager" unique_id=1357511093 instance=ExtResource("4_cm0pq")]
 
 [node name="BulletManager" type="Node" parent="." unique_id=1101800530]
 

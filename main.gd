@@ -25,7 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ProgressBar.value = (Time.get_ticks_msec() - start_time) / 1000
-	if $ProgressBar.value >= 10:
+	if $ProgressBar.value >= 60:
 		day = !day
 		start_time = Time.get_ticks_msec()
 		get_node("/root/Static").current_level += 1
