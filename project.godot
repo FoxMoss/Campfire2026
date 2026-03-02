@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Campfire2026"
-run/main_scene="uid://b7y7e21eyw2ee"
+run/main_scene="uid://jd7ged51bwj3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ Static="*uid://b3dq8sd8bx618"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="viewport"
 
 [editor_plugins]

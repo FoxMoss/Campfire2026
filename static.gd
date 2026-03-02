@@ -6,10 +6,15 @@ const levels = [
 	{"level":"Level 3", "quota": 5, "build_instructions": [["add_bird", 8]]},
 	{"level":"Level 4", "quota": 10, "build_instructions": [["add_bird", 15]]},
 	{"level":"Level 5", "quota": 15, "build_instructions": [["add_bird", 25]]},
+	{"level":"Level 6", "quota": 20, "build_instructions": [["add_bird", 30]]},
+	{"level":"Level 7", "quota": 25, "build_instructions": [["add_bird", 35]]},
+	{"level":"Level 8", "quota": 25, "build_instructions": [["add_bird", 35]]},
 	{"level":"The End", "quota": 0, "build_instructions": [["end"]]}
 ]
 
 var current_level = 0
+
+var segments = 6
 
 var bird = preload("res://bird.tscn")
 var main = preload("res://Main.tscn")
