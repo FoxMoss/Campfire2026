@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bvelmfjbksm08"]
 
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://y3pttlcl8t48" path="res://game_over.gd" id="1_yxx3c"]
 
 [node name="GameOver" type="Node2D" unique_id=121737374]
+script = ExtResource("1_yxx3c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=617877905]
 
@@ -26,3 +28,5 @@ offset_top = 10.0
 offset_right = 225.0
 offset_bottom = 41.0
 text = "Restart"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

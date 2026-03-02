@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ct8x4v0e3nynm"]
 
+[ext_resource type="Script" uid="uid://demok3xv7dh7y" path="res://win.gd" id="1_hgi8f"]
 [ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="1_wao2c"]
 
 [node name="Win" type="Node2D" unique_id=121737374]
+script = ExtResource("1_hgi8f")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=617877905]
 
@@ -33,3 +35,5 @@ offset_top = 2.0
 offset_right = 148.5
 offset_bottom = 33.0
 text = "Restart"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

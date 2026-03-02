@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 	
 	
 func remove_tail():
+	if(segments <= 0):
+		return
 	segments -= 1
 	(segments_storage[segments] as Node2D).queue_free()
 	segments_storage.erase(segments)
