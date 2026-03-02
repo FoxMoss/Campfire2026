@@ -1,17 +1,58 @@
 [gd_scene format=3 uid="uid://b7y7e21eyw2ee"]
 
 [ext_resource type="Script" uid="uid://dvt4vyw3rxayw" path="res://home_menu.gd" id="1_j6liv"]
+[ext_resource type="Texture2D" uid="uid://c26u7spxdk4o7" path="res://bird.png" id="2_tqwvy"]
+[ext_resource type="Texture2D" uid="uid://dg63ny6ca2e3n" path="res://birdtoo.png" id="3_mqeai"]
 
 [node name="HomeMenu" type="Node2D" unique_id=1212027868]
 script = ExtResource("1_j6liv")
 
 [node name="Button" type="Button" parent="." unique_id=908226588]
 offset_left = -148.0
-offset_top = -20.0
+offset_top = 11.0
 offset_right = 149.0
-offset_bottom = 11.0
+offset_bottom = 42.0
 text = "Start"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1791482394]
+
+[node name="Label" type="Label" parent="." unique_id=378789470]
+offset_left = -237.0
+offset_top = -80.0
+offset_right = 237.0
+offset_bottom = -25.0
+theme_override_font_sizes/font_size = 40
+text = "early worm gets the bird"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1591350916]
+texture_filter = 1
+position = Vector2(-340, -202)
+scale = Vector2(8, 8)
+texture = ExtResource("2_tqwvy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=865036231]
+texture_filter = 1
+position = Vector2(-308, 106)
+scale = Vector2(8, 8)
+texture = ExtResource("2_tqwvy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=133893651]
+texture_filter = 1
+position = Vector2(404, 65)
+scale = Vector2(-8, 8)
+texture = ExtResource("2_tqwvy")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1981070877]
+texture_filter = 1
+position = Vector2(111, 212)
+scale = Vector2(-8, 8)
+texture = ExtResource("3_mqeai")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=641562330]
+texture_filter = 1
+position = Vector2(203, -206)
+scale = Vector2(-8, 8)
+texture = ExtResource("2_tqwvy")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
